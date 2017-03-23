@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=D:\UPB\9no Semestre\Arquitectura y tecnologia de procesadores\VHDL\Processor\main_controller.ncd
+OUTFILE=D:\UPB\9no Semestre\Arquitectura y tecnologia de procesadores\VHDL\Processor\main_controller.bit
+FAMILY=Spartan3E
+PART=xc3s500e-4fg320
+WORKINGDIR=D:\UPB\9no Semestre\Arquitectura y tecnologia de procesadores\VHDL\Processor
+LICENSE=WebPack
+USER_INFO=211268337_0_0_317

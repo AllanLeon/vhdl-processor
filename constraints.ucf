@@ -1,0 +1,33 @@
+NET "clk" LOC = "C9" | IOSTANDARD = LVCMOS33 ;
+NET "clk" PERIOD = 20.0ns HIGH 50%;
+
+#NET "rst" LOC = "N17" | IOSTANDARD = LVTTL | PULLUP ;
+
+#NET "din<7>" LOC = "F7" | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ;
+#NET "din<6>" LOC = "E7" | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ;
+#NET "din<5>" LOC = "B6" | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ;
+#NET "din<4>" LOC = "A6" | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ;
+#NET "din<3>" LOC = "C5" | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ;
+#NET "din<2>" LOC = "D5" | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ;
+#NET "din<1>" LOC = "A4" | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ;
+#NET "din<0>" LOC = "B4" | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ;
+
+# ========= LCD =========
+#NET "E" LOC = "M18" |  IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 2;
+#NET "RS" LOC = "L18" |  IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 2;
+#NET "RW" LOC = "L17" |  IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 2;
+#NET "SF_CE0" LOC = "D16" |  IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 2;
+# The LCD four-bit data interface is shared with the StrataFlash.
+#NET "DB<0>" LOC = "R15" |  IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 2;
+#NET "DB<1>" LOC = "R16" |  IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 2;
+#NET "DB<2>" LOC = "P17" |  IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 2;
+#NET "DB<3>" LOC = "M15" |  IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 2;
+
+NET "dout<7>" LOC = "F9" | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ;
+NET "dout<6>" LOC = "E9" | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ;
+NET "dout<5>" LOC = "D11" | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ;
+NET "dout<4>" LOC = "C11" | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ;
+NET "dout<3>" LOC = "F11" | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ;
+NET "dout<2>" LOC = "E11" | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ;
+NET "dout<1>" LOC = "E12" | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ;
+NET "dout<0>" LOC = "F12" | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ;

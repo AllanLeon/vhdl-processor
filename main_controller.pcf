@@ -1,0 +1,18 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Wed Mar 22 20:58:59 2017
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "clk" LOCATE = SITE "C9" LEVEL 1;
+COMP "dout<0>" LOCATE = SITE "F12" LEVEL 1;
+COMP "dout<1>" LOCATE = SITE "E12" LEVEL 1;
+COMP "dout<2>" LOCATE = SITE "E11" LEVEL 1;
+COMP "dout<3>" LOCATE = SITE "F11" LEVEL 1;
+COMP "dout<4>" LOCATE = SITE "C11" LEVEL 1;
+COMP "dout<5>" LOCATE = SITE "D11" LEVEL 1;
+COMP "dout<6>" LOCATE = SITE "E9" LEVEL 1;
+COMP "dout<7>" LOCATE = SITE "F9" LEVEL 1;
+NET "clk_BUFGP/IBUFG" BEL "clk_BUFGP/BUFG.GCLKMUX" USELOCALCONNECT;
+NET "clk_BUFGP/IBUFG" PERIOD = 20 ns HIGH 50%;
+SCHEMATIC END;
+
