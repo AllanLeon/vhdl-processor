@@ -96,29 +96,29 @@ BEGIN
 		wait for clk_period/2;
    end process;
 	
-	input_process :process
-	begin
-		din <= "00100010";
-		wait for clk_period / 2*10;
-		din <= "00000000";
-		wait for clk_period / 2*10;
-		din <= "00000010";
-		wait for clk_period / 2*10;
-		din <= "00000000";
-		wait for clk_period / 2*10;
-		din <= "00101110";
-		wait for clk_period / 2*10;
-		din <= "00000000";
-		wait for clk_period / 2*10;
-		din <= "11111010";
-		wait for clk_period / 2*10;
-		din <= "00000000";
-		wait for clk_period / 2 * 10;
-		din <= "00000001";
-		wait for clk_period / 2 * 10;
-		din <= "00000000";
-		wait for clk_period * 1000;
-	end process;
+--	input_process :process
+--	begin
+--		din <= "00100010";
+--		wait for clk_period / 2*10;
+--		din <= "00000000";
+--		wait for clk_period / 2*10;
+--		din <= "00000010";
+--		wait for clk_period / 2*10;
+--		din <= "00000000";
+--		wait for clk_period / 2*10;
+--		din <= "00101110";
+--		wait for clk_period / 2*10;
+--		din <= "00000000";
+--		wait for clk_period / 2*10;
+--		din <= "11111010";
+--		wait for clk_period / 2*10;
+--		din <= "00000000";
+--		wait for clk_period / 2 * 10;
+--		din <= "00000001";
+--		wait for clk_period / 2 * 10;
+--		din <= "00000000";
+--		wait for clk_period * 1000;
+--	end process;
  
 
    -- Stimulus process

@@ -35,7 +35,7 @@ entity io_module is
 			  start : in STD_LOGIC;
 			  ins : in STD_LOGIC;
 			  din : in STD_LOGIC_VECTOR (5 downto 0);
-			  dout : out STD_LOGIC_VECTOR(7 downto 0);
+			  dout : out STD_LOGIC_VECTOR(7 downto 0) := x"00";
 			  ram : out STD_LOGIC := '0';
 			  exe : out STD_LOGIC := '0');
 end io_module;

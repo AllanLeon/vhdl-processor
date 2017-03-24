@@ -51,8 +51,8 @@ end control_unit;
 
 architecture Behavioral of control_unit is
 
---type state is (load_ins,
-type state is (load_ins_1, load_ins_2,
+type state is (load_ins,
+--type state is (load_ins_1, load_ins_2,
 					fetch_ins_1, fetch_ins_2, fetch_ins_3, fetch_ins_4, fetch_ins_5, fetch_ins_6, fetch_ins_7, fetch_ins_8, fetch_ins_9,
 					decode_ins,
 					mov_mem_1, mov_mem_2, mov_mem_3, mov_mem_4,
@@ -74,13 +74,13 @@ signal opcode, op1, op2, op_reg: STD_LOGIC_VECTOR(7 downto 0) := x"00";
 begin
 	process (clk, rst) begin
 		if (rst = '1') then
-			--current_state <= fetch_ins_1;
+			current_state <= load_ins;
 		elsif (clk'event and clk = '1') then
 			current_state <= next_state;
 		end if;
 	end process;
 	
-	process (current_state, io)-- io???
+	process (current_state, io, inst, psw)-- io???
 	begin
 		pc <= "00000";
 		ir <= "00000";
@@ -96,38 +96,38 @@ begin
 		cb_psw <= "000";
 		
 		case current_state is
---			when load_ins =>
---				ram(2) <= '1';
---				next_state <= fetch_ins_1;
+			when load_ins =>
+				ram(2) <= '1';
+				next_state <= fetch_ins_1;
 
-			when load_ins_1 =>
-				if (io(0) = '1') then
-					mar(0) <= '1';
-					mar(1) <= '1';
-					
-					pc(0) <= '1';
-					pc(1) <= '0';
-					
-					mbr(0) <= '1';
-					mbr(1) <= '1';
-					
-					next_state <= load_ins_2;
-				elsif (io(1) = '1') then
-					pc(4) <= '1';
-				
-					next_state <= fetch_ins_1;
-				end if;
-			
-			when load_ins_2 =>
-				if (io(0) = '0') then
-					ram(0) <= '1';
-					ram(1) <= '1';
-					
-					pc(0) <= '1';
-					pc(1) <= '1';
-					pc(2) <= '1';
-					next_state <= load_ins_1;
-				end if;
+--			when load_ins_1 =>
+--				if (io(0) = '1') then
+--					mar(0) <= '1';
+--					mar(1) <= '1';
+--					
+--					pc(0) <= '1';
+--					pc(1) <= '0';
+--					
+--					mbr(0) <= '1';
+--					mbr(1) <= '1';
+--					
+--					next_state <= load_ins_2;
+--				elsif (io(1) = '1') then
+--					pc(4) <= '1';
+--				
+--					next_state <= fetch_ins_1;
+--				end if;
+--			
+--			when load_ins_2 =>
+--				if (io(0) = '0') then
+--					ram(0) <= '1';
+--					ram(1) <= '1';
+--					
+--					pc(0) <= '1';
+--					pc(1) <= '1';
+--					pc(2) <= '1';
+--					next_state <= load_ins_1;
+--				end if;
 		
 			when fetch_ins_1 =>
 				pc(0) <= '1';
@@ -1284,7 +1284,7 @@ begin
 				
 			when reset =>
 				cb_psw <= "110";
-				next_state <= load_ins_1;
+				next_state <= load_ins;
 
 			when stop =>
 				--next_state <= stop;

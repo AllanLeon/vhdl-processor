@@ -1,7 +1,7 @@
 Release 14.7 par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-ALLAN-PC::  Wed Mar 22 20:59:07 2017
+ALLAN-PC::  Thu Mar 23 20:53:08 2017
 
 par -w -intstyle ise -ol high -t 1 main_controller_map.ncd main_controller.ncd
 main_controller.pcf 
@@ -14,32 +14,37 @@ Loading device for application Rf_Device from file '3s500e.nph' in environment C
 Initializing temperature to 85.000 Celsius. (default - Range: -40.000 to 100.000 Celsius)
 Initializing voltage to 1.140 Volts. (default - Range: 1.140 to 1.320 Volts)
 
+INFO:Par:282 - No user timing constraints were detected or you have set the option to ignore timing constraints ("par
+   -x"). Place and Route will run in "Performance Evaluation Mode" to automatically improve the performance of all
+   internal clocks in this design. Because there are not defined timing requirements, a timing score will not be
+   reported in the PAR report in this mode. The PAR timing summary will list the performance achieved for each clock.
+   Note: For the fastest runtime, set the effort level to "std".  For best performance, set the effort level to "high".
 
 Device speed data version:  "PRODUCTION 1.27 2013-10-13".
 
 
 Design Summary Report:
 
- Number of External IOBs                          10 out of 232     4%
+ Number of External IOBs                          26 out of 232    11%
 
-   Number of External Input IOBs                  2
+   Number of External Input IOBs                 10
 
-      Number of External Input IBUFs              2
-        Number of LOCed External Input IBUFs      1 out of 2      50%
+      Number of External Input IBUFs             10
+        Number of LOCed External Input IBUFs     10 out of 10    100%
 
 
-   Number of External Output IOBs                 8
+   Number of External Output IOBs                16
 
-      Number of External Output IOBs              8
-        Number of LOCed External Output IOBs      8 out of 8     100%
+      Number of External Output IOBs             16
+        Number of LOCed External Output IOBs     16 out of 16    100%
 
 
    Number of External Bidir IOBs                  0
 
 
-   Number of BUFGMUXs                        4 out of 24     16%
+   Number of BUFGMUXs                        7 out of 24     29%
    Number of MULT18X18SIOs                   1 out of 20      5%
-   Number of Slices                       3630 out of 4656   77%
+   Number of Slices                       3767 out of 4656   80%
       Number of SLICEMs                    512 out of 2328   21%
 
 
@@ -49,57 +54,68 @@ Placer effort level (-pl):    High
 Placer cost table entry (-t): 1
 Router effort level (-rl):    High 
 
-Starting initial Timing Analysis.  REAL time: 2 secs 
-Finished initial Timing Analysis.  REAL time: 2 secs 
+Starting initial Timing Analysis.  REAL time: 8 secs 
+Finished initial Timing Analysis.  REAL time: 8 secs 
 
 
 Starting Placer
-Total REAL time at the beginning of Placer: 2 secs 
-Total CPU  time at the beginning of Placer: 2 secs 
+Total REAL time at the beginning of Placer: 8 secs 
+Total CPU  time at the beginning of Placer: 8 secs 
 
 Phase 1.1  Initial Placement Analysis
-Phase 1.1  Initial Placement Analysis (Checksum:54203b2e) REAL time: 2 secs 
+Phase 1.1  Initial Placement Analysis (Checksum:7b949bd6) REAL time: 9 secs 
 
 Phase 2.7  Design Feasibility Check
-Phase 2.7  Design Feasibility Check (Checksum:54203b2e) REAL time: 2 secs 
+Phase 2.7  Design Feasibility Check (Checksum:7b949bd6) REAL time: 10 secs 
 
 Phase 3.31  Local Placement Optimization
-Phase 3.31  Local Placement Optimization (Checksum:54203b2e) REAL time: 2 secs 
+Phase 3.31  Local Placement Optimization (Checksum:7b949bd6) REAL time: 10 secs 
 
 Phase 4.2  Initial Clock and IO Placement
 
-Phase 4.2  Initial Clock and IO Placement (Checksum:804cd67f) REAL time: 4 secs 
+................
+WARNING:Place:1019 - A clock IOB / clock component pair have been found that are not placed at an optimal clock IOB /
+   clock site pair. The clock component <din_1_IBUF_BUFG> is placed at site <BUFGMUX_X1Y10>. The IO component <din<1>>
+   is placed at site <A4>.  This will not allow the use of the fast path between the IO and the Clock buffer. This is
+   normally an ERROR but the CLOCK_DEDICATED_ROUTE constraint was applied on COMP.PIN <din<1>.PAD> allowing your design
+   to continue. This constraint disables all clock placer rules related to the specified COMP.PIN. The use of this
+   override is highly discouraged as it may lead to very poor timing results. It is recommended that this error
+   condition be corrected in the design.
+WARNING:Place:1019 - A clock IOB / clock component pair have been found that are not placed at an optimal clock IOB /
+   clock site pair. The clock component <clk_BUFGP/BUFG> is placed at site <BUFGMUX_X2Y1>. The IO component <clk> is
+   placed at site <IPAD98>.  This will not allow the use of the fast path between the IO and the Clock buffer. This is
+   normally an ERROR but the CLOCK_DEDICATED_ROUTE constraint was applied on COMP.PIN <clk.PAD> allowing your design to
+   continue. This constraint disables all clock placer rules related to the specified COMP.PIN. The use of this override
+   is highly discouraged as it may lead to very poor timing results. It is recommended that this error condition be
+   corrected in the design.
+Phase 4.2  Initial Clock and IO Placement (Checksum:909c3c92) REAL time: 15 secs 
 
 Phase 5.30  Global Clock Region Assignment
-Phase 5.30  Global Clock Region Assignment (Checksum:804cd67f) REAL time: 4 secs 
+Phase 5.30  Global Clock Region Assignment (Checksum:909c3c92) REAL time: 15 secs 
 
 Phase 6.36  Local Placement Optimization
-Phase 6.36  Local Placement Optimization (Checksum:804cd67f) REAL time: 4 secs 
+Phase 6.36  Local Placement Optimization (Checksum:909c3c92) REAL time: 15 secs 
 
-Phase 7.3  Local Placement Optimization
-
-Phase 7.3  Local Placement Optimization (Checksum:6fe802cf) REAL time: 4 secs 
+Phase 7.8  Global Placement
+..........
+..........................................................................................................................................
+.........
+...............................................................
+...................................
+..................................
+Phase 7.8  Global Placement (Checksum:611eba51) REAL time: 34 secs 
 
 Phase 8.5  Local Placement Optimization
-Phase 8.5  Local Placement Optimization (Checksum:6fe802cf) REAL time: 4 secs 
+Phase 8.5  Local Placement Optimization (Checksum:611eba51) REAL time: 34 secs 
 
-Phase 9.8  Global Placement
-.........................................................................................................................................
-.......
-..................
-Phase 9.8  Global Placement (Checksum:ff28e86d) REAL time: 6 secs 
+Phase 9.18  Placement Optimization
+Phase 9.18  Placement Optimization (Checksum:a35d4f36) REAL time: 42 secs 
 
 Phase 10.5  Local Placement Optimization
-Phase 10.5  Local Placement Optimization (Checksum:ff28e86d) REAL time: 6 secs 
+Phase 10.5  Local Placement Optimization (Checksum:a35d4f36) REAL time: 42 secs 
 
-Phase 11.18  Placement Optimization
-Phase 11.18  Placement Optimization (Checksum:d3c6cfe1) REAL time: 7 secs 
-
-Phase 12.5  Local Placement Optimization
-Phase 12.5  Local Placement Optimization (Checksum:d3c6cfe1) REAL time: 7 secs 
-
-Total REAL time to Placer completion: 7 secs 
-Total CPU  time to Placer completion: 6 secs 
+Total REAL time to Placer completion: 42 secs 
+Total CPU  time to Placer completion: 42 secs 
 Writing design to file main_controller.ncd
 
 
@@ -107,36 +123,46 @@ Writing design to file main_controller.ncd
 Starting Router
 
 
-Phase  1  : 19962 unrouted;      REAL time: 11 secs 
+Phase  1  : 22983 unrouted;      REAL time: 54 secs 
 
-Phase  2  : 17770 unrouted;      REAL time: 14 secs 
+Phase  2  : 20694 unrouted;      REAL time: 1 mins 25 secs 
 
-Phase  3  : 5381 unrouted;      REAL time: 16 secs 
+Phase  3  : 5698 unrouted;      REAL time: 1 mins 32 secs 
 
-Phase  4  : 5381 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 17 secs 
+Phase  4  : 5710 unrouted; (Par is working to improve performance)     REAL time: 1 mins 34 secs 
 
-Phase  5  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 23 secs 
+Phase  5  : 0 unrouted; (Par is working to improve performance)     REAL time: 2 mins 3 secs 
 
 Updating file: main_controller.ncd with current fully routed design.
 
-Phase  6  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 24 secs 
+Phase  6  : 0 unrouted; (Par is working to improve performance)     REAL time: 2 mins 6 secs 
 
-Phase  7  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 24 secs 
+Phase  7  : 0 unrouted; (Par is working to improve performance)     REAL time: 6 mins 44 secs 
 
-Phase  8  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 24 secs 
-WARNING:Route:455 - CLK Net:cb_mbr<1> may have excessive skew because 
-      0 CLK pins and 1 NON_CLK pins failed to route using a CLK template.
-WARNING:Route:455 - CLK Net:cb_alua<1> may have excessive skew because 
-      3 CLK pins and 3 NON_CLK pins failed to route using a CLK template.
-WARNING:Route:455 - CLK Net:cb_alub<1> may have excessive skew because 
-      4 CLK pins and 0 NON_CLK pins failed to route using a CLK template.
-WARNING:Route:455 - CLK Net:cb_pc<0> may have excessive skew because 
-      0 CLK pins and 17 NON_CLK pins failed to route using a CLK template.
+Phase  8  : 0 unrouted; (Par is working to improve performance)     REAL time: 7 mins 37 secs 
+
+Phase  9  : 0 unrouted; (Par is working to improve performance)     REAL time: 7 mins 37 secs 
+
+Phase 10  : 0 unrouted; (Par is working to improve performance)     REAL time: 7 mins 45 secs 
+
+Phase 11  : 0 unrouted; (Par is working to improve performance)     REAL time: 7 mins 45 secs 
+
+Phase 12  : 0 unrouted; (Par is working to improve performance)     REAL time: 7 mins 47 secs 
 WARNING:Route:455 - CLK Net:cb_alu<0> may have excessive skew because 
-      0 CLK pins and 1 NON_CLK pins failed to route using a CLK template.
+      0 CLK pins and 3 NON_CLK pins failed to route using a CLK template.
+WARNING:Route:455 - CLK Net:cb_pc<0> may have excessive skew because 
+      0 CLK pins and 24 NON_CLK pins failed to route using a CLK template.
+WARNING:Route:455 - CLK Net:cb_out<1> may have excessive skew because 
+      4 CLK pins and 0 NON_CLK pins failed to route using a CLK template.
+WARNING:Route:455 - CLK Net:cb_mbr<1> may have excessive skew because 
+      1 CLK pins and 2 NON_CLK pins failed to route using a CLK template.
+WARNING:Route:455 - CLK Net:cb_alua<1> may have excessive skew because 
+      0 CLK pins and 3 NON_CLK pins failed to route using a CLK template.
+WARNING:Route:455 - CLK Net:io/next_state_not0001 may have excessive skew because 
+      1 CLK pins and 0 NON_CLK pins failed to route using a CLK template.
 
-Total REAL time to Router completion: 24 secs 
-Total CPU time to Router completion: 22 secs 
+Total REAL time to Router completion: 7 mins 47 secs 
+Total CPU time to Router completion: 7 mins 46 secs 
 
 Partition Implementation Status
 -------------------------------
@@ -154,28 +180,40 @@ Generating Clock Report
 +---------------------+--------------+------+------+------------+-------------+
 |        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
 +---------------------+--------------+------+------+------------+-------------+
-|           clk_BUFGP | BUFGMUX_X1Y11| No   |   43 |  0.028     |  0.161      |
+|           cb_ram<0> |  BUFGMUX_X1Y0| No   | 1046 |  0.088     |  0.205      |
 +---------------------+--------------+------+------+------------+-------------+
-|           cb_ram<0> |  BUFGMUX_X1Y0| No   | 1032 |  0.087     |  0.204      |
+|            cb_ir<0> | BUFGMUX_X2Y11| No   |   12 |  0.025     |  0.143      |
 +---------------------+--------------+------+------+------------+-------------+
-|            cb_ir<0> | BUFGMUX_X2Y11| No   |   13 |  0.034     |  0.179      |
+|cu/current_state<78> |              |      |      |            |             |
+|                     |  BUFGMUX_X2Y0| No   |   44 |  0.031     |  0.150      |
 +---------------------+--------------+------+------+------------+-------------+
-|          cb_regs<0> | BUFGMUX_X1Y10| No   | 1032 |  0.084     |  0.201      |
+|           clk_BUFGP |  BUFGMUX_X2Y1| No   |   57 |  0.046     |  0.163      |
 +---------------------+--------------+------+------+------------+-------------+
-|           cb_out<1> |         Local|      |    8 |  0.292     |  2.226      |
+|          cb_regs<0> | BUFGMUX_X2Y10| No   | 1032 |  0.080     |  0.198      |
 +---------------------+--------------+------+------+------------+-------------+
-|           cb_mbr<1> |         Local|      |    5 |  0.026     |  1.461      |
+|               lcd/E | BUFGMUX_X1Y11| No   |   13 |  0.013     |  0.178      |
 +---------------------+--------------+------+------+------------+-------------+
-|          cb_alua<1> |         Local|      |    7 |  0.959     |  1.559      |
+|          din_1_IBUF | BUFGMUX_X1Y10| No   |   12 |  0.025     |  0.171      |
 +---------------------+--------------+------+------+------------+-------------+
-|          cb_alub<1> |         Local|      |    4 |  0.215     |  0.876      |
+|           cb_alu<0> |         Local|      |    8 |  0.037     |  1.519      |
 +---------------------+--------------+------+------+------------+-------------+
-|            cb_pc<0> |         Local|      |   25 |  0.031     |  1.721      |
+|            cb_pc<0> |         Local|      |   28 |  0.143     |  2.172      |
++---------------------+--------------+------+------+------------+-------------+
+|           cb_out<1> |         Local|      |    4 |  1.065     |  2.265      |
 +---------------------+--------------+------+------+------------+-------------+
 |mux_addr_bus/addr_bu |              |      |      |            |             |
-|        s_cmp_eq0000 |         Local|      |   31 |  0.099     |  1.859      |
+|        s_cmp_eq0000 |         Local|      |   16 |  0.045     |  1.944      |
 +---------------------+--------------+------+------+------------+-------------+
-|           cb_alu<0> |         Local|      |   10 |  0.098     |  1.876      |
+|           cb_mbr<1> |         Local|      |    6 |  1.234     |  2.692      |
++---------------------+--------------+------+------+------------+-------------+
+|          cb_alua<1> |         Local|      |    7 |  0.197     |  2.145      |
++---------------------+--------------+------+------+------------+-------------+
+|          cb_alub<1> |         Local|      |    4 |  0.009     |  1.203      |
++---------------------+--------------+------+------+------------+-------------+
+|io/next_state_not000 |              |      |      |            |             |
+|                   1 |         Local|      |    5 |  0.431     |  1.554      |
++---------------------+--------------+------+------+------------+-------------+
+|      io/dout_or0000 |         Local|      |    8 |  0.025     |  1.876      |
 +---------------------+--------------+------+------+------------+-------------+
 
 * Net Skew is the difference between the minimum and maximum routing
@@ -186,7 +224,7 @@ the minimum and maximum path delays which includes logic delays.
 * The fanout is the number of component pins not the individual BEL loads,
 for example SLICE loads not FF loads.
 
-Timing Score: 0 (Setup: 0, Hold: 0, Component Switching Limit: 0)
+Timing Score: 0 (Setup: 0, Hold: 0)
 
 Asterisk (*) preceding a constraint indicates it was not met.
    This may be due to a setup or hold violation.
@@ -195,30 +233,55 @@ Asterisk (*) preceding a constraint indicates it was not met.
   Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
                                             |             |    Slack   | Achievable | Errors |    Score   
 ----------------------------------------------------------------------------------------------------------
-  NET "clk_BUFGP/IBUFG" PERIOD = 20 ns HIGH | SETUP       |    14.247ns|     5.753ns|       0|           0
-   50%                                      | HOLD        |     0.948ns|            |       0|           0
+  Autotimespec constraint for clock net cb_ | SETUP       |         N/A|     7.412ns|     N/A|           0
+  ram<0>                                    | HOLD        |     4.117ns|            |       0|           0
+----------------------------------------------------------------------------------------------------------
+  Autotimespec constraint for clock net cb_ | SETUP       |         N/A|     1.996ns|     N/A|           0
+  alu<0>                                    | HOLD        |     1.318ns|            |       0|           0
+----------------------------------------------------------------------------------------------------------
+  Autotimespec constraint for clock net cb_ | SETUP       |         N/A|     5.704ns|     N/A|           0
+  ir<0>                                     | HOLD        |     2.486ns|            |       0|           0
+----------------------------------------------------------------------------------------------------------
+  Autotimespec constraint for clock net cb_ | SETUP       |         N/A|     4.919ns|     N/A|           0
+  pc<0>                                     | HOLD        |     1.547ns|            |       0|           0
+----------------------------------------------------------------------------------------------------------
+  Autotimespec constraint for clock net clk | SETUP       |         N/A|     8.256ns|     N/A|           0
+  _BUFGP                                    | HOLD        |     2.252ns|            |       0|           0
+----------------------------------------------------------------------------------------------------------
+  Autotimespec constraint for clock net mux | SETUP       |         N/A|     5.244ns|     N/A|           0
+  _addr_bus/addr_bus_cmp_eq0000             | HOLD        |     2.160ns|            |       0|           0
+----------------------------------------------------------------------------------------------------------
+  Autotimespec constraint for clock net cb_ | SETUP       |         N/A|     7.974ns|     N/A|           0
+  regs<0>                                   | HOLD        |     4.113ns|            |       0|           0
+----------------------------------------------------------------------------------------------------------
+  Autotimespec constraint for clock net lcd | SETUP       |         N/A|     2.388ns|     N/A|           0
+  /E                                        | HOLD        |     0.976ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
 
 
 All constraints were met.
+INFO:Timing:2761 - N/A entries in the Constraints List may indicate that the 
+   constraint is not analyzed due to the following: No paths covered by this 
+   constraint; Other constraints intersect with this constraint; or This 
+   constraint was disabled by a Path Tracing Control. Please run the Timespec 
+   Interaction Report (TSI) via command line (trce tsi) or Timing Analyzer GUI.
 
 
 Generating Pad Report.
 
 All signals are completely routed.
 
-Total REAL time to PAR completion: 26 secs 
-Total CPU time to PAR completion: 23 secs 
+Total REAL time to PAR completion: 7 mins 49 secs 
+Total CPU time to PAR completion: 7 mins 48 secs 
 
-Peak Memory Usage:  310 MB
+Peak Memory Usage:  348 MB
 
 Placement: Completed - No errors found.
 Routing: Completed - No errors found.
-Timing: Completed - No errors found.
 
 Number of error messages: 0
-Number of warning messages: 5
-Number of info messages: 0
+Number of warning messages: 8
+Number of info messages: 1
 
 Writing design to file main_controller.ncd
 

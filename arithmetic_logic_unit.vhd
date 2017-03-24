@@ -47,6 +47,7 @@ begin
 	begin
 		if (rst = '1') then
 			res <= x"00";
+			control <= "000";
 		elsif (clk'event and clk='1') then
 			case opcode is
 				when "000" =>
@@ -57,15 +58,16 @@ begin
 					res <= not op1;
 					
 				when "111" =>
+					control <= "000";
 					if (op1 = op2) then
 						control(0) <= '1';
 					else
 						control(0) <= '0';
-					end if;
-					if (op1 > op2) then
-						control(1) <= '0';
-					else
-						control(1) <= '1';
+						if (op1 > op2) then
+							control(1) <= '0';
+						else
+							control(1) <= '1';
+						end if;
 					end if;
 				when others =>
 			end case;

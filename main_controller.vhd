@@ -223,22 +223,13 @@ signal data_bus : STD_LOGIC_VECTOR (7 downto 0) := "00000000";
 
 begin
 
-	--mux_mar_in: mux_2x1_12bits port map(pc_out, ir_out(11 downto 0), cb_mar(1), mar_in);
-	--mux_mbr_in: mux_2x1_16bits port map(data_bus, acc_out, cb_mbr(1), mbr_in);
-	
-	-- DATA BUS
-	-- mux
 	mux_data_bus: mux_data port map(ram_out, regs_out, mbr_out, ir_out, alua_out, alu_out, io_out,
 											  cb_ram(0 to 1), cb_regs(0 to 1), cb_mbr(0 to 1), cb_ir, cb_alua(0 to 1), cb_alu(0), cb_io(0),
 											  data_bus);
-	-- demux?
 	
-	-- ADDR BUS
-	-- mux
 	mux_addr_bus: mux_addr port map(mar_out, pc_out, ir_out,
 											  cb_mar(0 to 1), cb_pc(0 to 1), cb_ir,
 											  addr_bus);
-	-- demux?
 
 	cu: control_unit port map(clk, rst, ir_out, psw_out, cb_io, cb_pc, cb_ir, cb_mar, cb_mbr, cb_acc, cb_ram, cb_regs, cb_alua, cb_alub, cb_alu, cb_out, cb_psw_cu);
 	ram: memory port map(cb_ram(0), rst, cb_ram(1), cb_ram(2), addr_bus, data_bus, ram_out);
@@ -260,8 +251,11 @@ begin
 	io: io_module port map(clk, rst, din(0), din(1), din(7 downto 2), io_out, cb_io(0), cb_io(1));
 	
 	lcd: lcd_display port map(clk, rst, output_out, E, RS, RW, SF_CE0, DB);
+	--lcd: lcd_display port map(clk, rst, din, E, RS, RW, SF_CE0, DB);
 	
 	dout <= output_out;
+	--dout <= din;
+	--dout <= "11111111";
 
 end Behavioral;
 

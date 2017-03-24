@@ -46,7 +46,7 @@ type state is (FI1A,FI1B,FI2A,FI2B,FI3A,FI3B,BOR1,BOR2,CONT1,CONT2,
 	                 MOD1,MOD2,zero1,zero2,x1,x2,hex1,hex2,hex3,hex4,
 						  rl1,rl2,rl3,rl4,done1,done2);	
 	signal pr_state,nx_state:state;
-	signal data1, data2: STD_LOGIC_VECTOR (3 downto 0);
+	--signal data1, data2: STD_LOGIC_VECTOR (3 downto 0);
 	signal data1_tmp1, data1_tmp2, data2_tmp1, data2_tmp2: STD_LOGIC_VECTOR (3 downto 0);
 	begin
 		SF_CE0 <='1';
@@ -187,8 +187,9 @@ type state is (FI1A,FI1B,FI2A,FI2B,FI3A,FI3B,BOR1,BOR2,CONT1,CONT2,
 end process COMB_maquina;
 
 to_hex_data1: process(data)
+	variable data1 : STD_LOGIC_VECTOR (3 downto 0);
 begin
-	data1 <= data(7 downto 4);
+	data1 := data(7 downto 4);
 	case data1 is
 		when "0000" =>
 			data1_tmp1 <= "0011";
@@ -245,8 +246,9 @@ begin
 end process;
 
 to_hex_data2: process(data)
+	variable data2 : STD_LOGIC_VECTOR (3 downto 0);
 begin
-	data2 <= data(3 downto 0);
+	data2 := data(3 downto 0);
 	case data2 is
 		when "0000" =>
 			data2_tmp1 <= "0011";
